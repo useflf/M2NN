@@ -16,6 +16,4 @@ https://doc.ml.tu-berlin.de/hBCI/contactthanks.php
   year={2022},
   volume={22},
   number={21},
-  pages={20695-20706},
-  keywords={Electroencephalography;Functional near-infrared spectroscopy;Feature extraction;Multitasking;Task analysis;Brain modeling;Spatial resolution;Brain–computer interface (BCI);motor imagery (MI);multimodal;multitask learning (MTL)},
-  doi={10.1109/JSEN.2022.3205956}}
+  pages={20695-20706}}
