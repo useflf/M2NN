@@ -15,94 +15,9 @@ from sklearn.preprocessing import OneHotEncoder
 
 class DataProcess():
 
-#load ea dataset
-    def load_npy_for_ea(self,data_path,data_files):
-        print('load EA data')
-        
-        data1 = []
-        label1 = []
-        data2 = []
-        label2 = []
-        
-        for i in range(1,data_files):
-#             print(str(i))
-             data_path1 = data_path + 'EEG/EA_eeg'+str(i)+'.npy'
-             label_path1 = data_path + 'EEG/y'+str(i)+'.npy'
-             if i == 1:        
-                data1 = np.load(data_path1)
-                label1 = np.load(label_path1)
-             else:
-                data_t = np.load(data_path1)
-#                data_t = data_t.swapaxes(0,1)
-#                data_t = data_t.swapaxes(1,2)
-                label_t = np.load(label_path1)
-                data1 = np.concatenate((data1,data_t),axis = 0)
-                label1 = np.concatenate((label1,label_t),axis = 0)
-                
-        for j in range(1,data_files):
-#            print(str(j))
-            data_path2 = data_path + 'HbR/EA_hbr'+str(j)+'.npy'
-            label_path2 = data_path + 'HbR/y'+str(j)+'.npy'
-            if j == 1:
-                data2 = np.load(data_path2)               
-                label2 = np.load(label_path2)                                
-            else:
-                data_t = np.load(data_path2)
-#                data_t = data_t.swapaxes(0,1)
-#                data_t = data_t.swapaxes(1,2)
-                label_t = np.load(label_path2)
-                data2 = np.concatenate((data2,data_t),axis = 0)
-                label2 = np.concatenate((label2,label_t),axis = 0)
-                   
-        return data1,label1,data2,label2
-    
-  
-#    load raw dataset
-
     def load_npy_for_raw(self,data_path, data_files):
         print('load Raw data')
-        data1 = []
-        label1 = [] 
-        data2 = []
-        label2 = []
-#        subjects = 3
-        for i in range(1,data_files):
-#            print(i) 
-            data_path1 = data_path + 'EEG/X_eeg'+str(i)+'.npy'
-            label_path1 = data_path + 'EEG/Y_eeg'+str(i)+'.npy'
-            if i == 1:
-                data1 = np.load(data_path1)         
-                label1 = np.load(label_path1)
-            else:
-                 data_t = np.load(data_path1)
-                 label_t = np.load(label_path1)
-                 data1 = np.concatenate((data1,data_t),axis = 0)
-                 label1 = np.concatenate((label1,label_t),axis = 0)
-                  
-
-        for j in range(1,data_files):
-             data_path2 = data_path + 'HbR/X_hbr'+str(j)+'.npy'            
-             label_path2 = data_path + 'HbR/Y_hbr'+str(j)+'.npy'
-             if j == 1:
-                 data2 = np.load(data_path2)
-                 data2 = data2[:,50:150,:]
-                 label2 = np.load(label_path2)
-             elif j < 11:
-                data_t = np.load(data_path2)
-                data_t = data_t[:,50:150,:]
-                label_t = np.load(label_path2)
-                data2 = np.concatenate((data2,data_t),axis = 0)
-                label2 = np.concatenate((label2,label_t),axis = 0)                
-#                print(str(j))
-             else:
-                data_t = np.load(data_path2)
-                data_t = data_t[:,:,12:36]
-#                data_t = data_t.swapaxes(0,1)
-#                data_t = data_t.swapaxes(1,2)
-                label_t = np.load(label_path2)
-                data2 = np.concatenate((data2,data_t),axis = 0)
-                label2 = np.concatenate((label2,label_t),axis = 0)
-                                    
+        # Design by yourself                                 
         return data1,label1,data2,label2
     
 
