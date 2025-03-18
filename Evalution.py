@@ -5,20 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc 
 class Evalution:
     
-#    def __init__ (self,
-#                   history,
-#                   y_pred,
-#                   y_true,
-#                   loss_score,
-#                   error,
-#                   validation_score):
-#        self.history = history
-#        self.y_pred = y_pred
-#        self.y_true = y_true
-#        self.loss_score = loss_score
-#        self.error = error
-#        self.validation_score = validation_score
-#        
+
 
         
     # Matrix confusion and the kappa value,f1
