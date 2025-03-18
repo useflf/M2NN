@@ -40,7 +40,7 @@ if __name__ == "__main__":
     AUC = []         
     k = 10                
     for fold in range(k): 
-        cv=27 
+        cv=27 #subjects  
         print(cv)
         X = data_eeg[60 * cv:60 * (cv+1)]
         Y = label_eeg[60 * cv:60 * (cv+1)]
